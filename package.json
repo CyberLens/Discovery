@@ -1,7 +1,7 @@
 {
-  "name": "apparatus",
+  "name": "disc0very",
   "version": "0.1.8",
-  "description": "an IoT network security analysis and visualization tool",
+  "description": "a security analysis and visualization tool",
   "main": "./app/main.js",
   "scripts": {
     "start": "electron .",
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Or3stis/apparatus"
+    "url": "git+https://github.com/Or3stis/disc0very"
   },
   "keywords": [
     "Electron",
@@ -22,15 +22,15 @@
   "author": "or3stis",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Or3stis/apparatus/issues"
+    "url": "https://github.com/Or3stis/disc0very/issues"
   },
-  "homepage": "https://github.com/Or3stis/apparatus/#readme",
+  "homepage": "https://github.com/Or3stis/disc0very/#readme",
   "engines": {
     "node": ">=10.6.0"
   },
   "build": {
-    "productName": "ASTo",
-    "appId": "org.or3stis.asto",
+    "productName": "disc0very",
+    "appId": "org.or3stis.disc0very",
     "mac": {
       "target": "dmg"
     },

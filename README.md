@@ -1,12 +1,12 @@
-# ASTo - Apparatus Software Tool
+# DiscØvery - CyberLens Software Tool
 
-## An IoT network security analysis and visualization tool
+## A network security analysis and visualization tool
 
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
-![travis build](https://travis-ci.org/Or3stis/apparatus.svg?branch=master)
-[![dependencies Status](https://david-dm.org/or3stis/apparatus.svg)](https://david-dm.org/or3stis/apparatus)
-[![devDependencies Status](https://david-dm.org/or3stis/apparatus/dev-status.svg)](https://david-dm.org/or3stis/apparatus?type=dev)
+<!-- ![travis build](https://travis-ci.org/Or3stis/apparatus.svg?branch=master) -->
+<!-- [![dependencies Status](https://david-dm.org/or3stis/apparatus.svg)](https://david-dm.org/or3stis/apparatus) -->
+<!-- [![devDependencies Status](https://david-dm.org/or3stis/apparatus/dev-status.svg)](https://david-dm.org/or3stis/apparatus?type=dev) -->
 
 ASTo is security analysis tool for IoT networks. It is developed to support the Apparatus security framework. ASTo is based on
 [electron](http://electron.atom.io/) and
@@ -29,13 +29,13 @@ The application is in alpha stage. The focus now is to improve the core function
 
 Some screenshots
 
-![asto home](https://raw.githubusercontent.com/Or3stis/apparatus/master/assets/screenShot1.png)
+![asto home](https://github.com/CyberLens/Disc0very/blob/master/assets/screenShot1.png)
 
-![asto UI 1](https://raw.githubusercontent.com/Or3stis/apparatus/master/assets/screenShot2.png)
+![asto UI 1](https://github.com/CyberLens/Disc0very/blob/master/assets/screenShot2.png)
 
-![asto UI 2](https://raw.githubusercontent.com/Or3stis/apparatus/master/assets/screenShot3.png)
+![asto UI 2](https://github.com/CyberLens/Disc0very/blob/master/assets/screenShot3.png)
 
-![asto UI 2](https://raw.githubusercontent.com/Or3stis/apparatus/master/assets/screenShot4.png)
+![asto UI 2](https://github.com/CyberLens/Disc0very/blob/master/assets/screenShot4.png)
 
 ## Console
 
@@ -55,7 +55,7 @@ To clone and run this repository you'll need [Git](https://git-scm.com) and [Nod
 
 ```bash
 # Clone this repository
-git clone https://github.com/Or3stis/apparatus.git
+git clone https://github.com/CyberLens/Disc0very.git
 # Navigate into the repository
 cd apparatus
 # Install dependencies
@@ -92,7 +92,7 @@ You can find more information about Cytoscape's performance optimizations in thi
 
 ## Contributing
 
-If you want to contribute to the project,  that's great 😃. Check the [contributing](https://github.com/Or3stis/apparatus/blob/master/CONTRIBUTING.md) guide. The application is being developed on macOs. That means that new commits might introduce breaking changes in other platforms. Especially commits that involve access to the file system. If something is not working, don't hesitate to create an [issue](https://github.com/Or3stis/apparatus/issues).
+If you want to contribute to the project,  that's great 😃. Check the [contributing](https://github.com/CyberLens/Disc0very/blob/master/CONTRIBUTING.md) guide. The application is being developed on macOs. That means that new commits might introduce breaking changes in other platforms. Especially commits that involve access to the file system. If something is not working, don't hesitate to create an [issue](https://github.com/CyberLens/Disc0very/issues).
 
 If you want to find out how the app works check the [wiki](https://or3stis.github.io/apparatus/wiki).
 
