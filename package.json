@@ -1,5 +1,5 @@
 {
-  "name": "DiscØvery",
+  "name": "disc0very",
   "version": "0.1.8",
   "description": "a network security analysis and visualization tool",
   "main": "./app/main.js",
