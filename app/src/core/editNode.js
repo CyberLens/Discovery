@@ -134,7 +134,7 @@ const createForm = selectedNode => {
   const submit = document.createElement('input')
   submit.className = 'submit-form'
   submit.type = 'submit'
-  submit.value = 'Submit'
+  submit.value = 'update'
   form.appendChild(submit)
   htmlElement.appendChild(form)
 
