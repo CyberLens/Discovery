@@ -53,7 +53,7 @@ module.exports = function patterns (cy) {
   const submit = document.createElement('input')
   submit.className = 'submit-form'
   submit.type = 'submit'
-  submit.value = 'Submit'
+  submit.value = 'search'
 
   form.appendChild(submit)
   htmlElement.appendChild(form)
