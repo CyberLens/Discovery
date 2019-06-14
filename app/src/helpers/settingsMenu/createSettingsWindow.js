@@ -15,7 +15,9 @@ module.exports = function settingsWindow () {
       width: 570,
       height: 700,
       show: false,
-      nodeIntegration: true
+      webPreferences: {
+        nodeIntegration: true
+      }
     })
     win.loadURL(URL)
 
