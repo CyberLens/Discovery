@@ -8,7 +8,7 @@
 <!-- [![dependencies Status](https://david-dm.org/or3stis/apparatus.svg)](https://david-dm.org/or3stis/apparatus) -->
 <!-- [![devDependencies Status](https://david-dm.org/or3stis/apparatus/dev-status.svg)](https://david-dm.org/or3stis/apparatus?type=dev) -->
 
-ASTo is security analysis tool for IoT networks. It is developed to support the Apparatus security framework. ASTo is based on
+DiscØvery is security analysis tool for IoT and 5G systems. It is the active fork of [ASTo](https://github.com/Or3stis/apparatus). DiscØvery is build with
 [electron](http://electron.atom.io/) and
 [cytoscape.js](http://js.cytoscape.org/). The icons are provided by Google's [Material Design](https://material.io/icons/).
 
@@ -29,25 +29,25 @@ The application is in alpha stage. The focus now is to improve the core function
 
 Some screenshots
 
-![asto home](https://github.com/CyberLens/Disc0very/blob/master/assets/screenShot1.png)
+![DiscØvery home](https://github.com/CyberLens/Disc0very/blob/master/assets/screenShot1.png)
 
-![asto UI 1](https://github.com/CyberLens/Disc0very/blob/master/assets/screenShot2.png)
+![DiscØvery UI 1](https://github.com/CyberLens/Disc0very/blob/master/assets/screenShot2.png)
 
-![asto UI 2](https://github.com/CyberLens/Disc0very/blob/master/assets/screenShot3.png)
+![DiscØvery UI 2](https://github.com/CyberLens/Disc0very/blob/master/assets/screenShot3.png)
 
-![asto UI 2](https://github.com/CyberLens/Disc0very/blob/master/assets/screenShot4.png)
+![DiscØvery UI 2](https://github.com/CyberLens/Disc0very/blob/master/assets/screenShot4.png)
 
 ## Console
 
-ASTo has a command line console available on the bottom right corner of the app. You gain focus on the console by pressing the keybinding `cmd + l` for macOs and `ctrl + l` for Windows/Linux. If you type `help`, it will display a list of console options.
+DiscØvery has a command line console available on the bottom right corner of the app. You gain focus on the console by pressing the keybinding `cmd + l` for macOs and `ctrl + l` for Windows/Linux. If you type `help`, it will display a list of console options.
 
-The console can be used to search for specific objects in the graph or perform operations. Raw text is used as search input. For example, if you type `device`, ASTo will highlight all the nodes in the graph that have the word `device` as an attribute.
+The console can be used to search for specific objects in the graph or perform operations. Raw text is used as search input. For example, if you type `device`, DiscØvery will highlight all the nodes in the graph that have the word `device` as an attribute.
 
 All console commands must be preceded with a `:`. For example, typing `:insights` will perform the security insights functions. On the other hand, typing `insights` (without the `:`) will perform a search operation on the graph elements with the keyword `insights`.
 
 ## Color themes
 
-ASTo supports a light and a dark color theme. The colors themes are based on Atom's [One Dark](https://github.com/atom/one-dark-syntax) and [One Light](https://github.com/atom/one-light-syntax). To switch between themes use the toggle button on the bottom left corner.
+DiscØvery supports a light and a dark color theme. The colors themes are based on Atom's [One Dark](https://github.com/atom/one-dark-syntax) and [One Light](https://github.com/atom/one-light-syntax). To switch between themes use the toggle button on the bottom left corner.
 
 ## To Use
 
@@ -86,7 +86,7 @@ Once the app starts, the first window (home screen) will ask you to choose which
 
 You will find some example graphs in the `sample` folder.
 
-\- _Note in performance_. If you render a graph with more than a thousand nodes, depending on your hardware, you might detect some performance issues. The reason is that the default label rendering of nodes and edges in ASTo is quite expensive. Rendering label on nodes and edges along with directional arrows is CPU expensive. To improve performance, you can hide the labels and the directional arrows by pressing the `label` button.
+\- _Note in performance_. If you render a graph with more than a thousand nodes, depending on your hardware, you might detect some performance issues. The reason is that the default label rendering of nodes and edges in DiscØvery is quite expensive. Rendering label on nodes and edges along with directional arrows is CPU expensive. To improve performance, you can hide the labels and the directional arrows by pressing the `label` button.
 
 You can find more information about Cytoscape's performance optimizations in this [link](http://js.cytoscape.org/#performance).
 
