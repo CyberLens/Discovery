@@ -22,6 +22,7 @@ const settingsWindow = require('./helpers/settingsMenu/createSettingsWindow.js')
 
 // require implementation modules
 const insights = require('./imp/insights.js')
+const threats = require('./imp/threats.js')
 
 // require helpers for the buttons
 const buttonHelpers = require('./buttons/buttonHelpers.js')
@@ -57,6 +58,7 @@ module.exports = function (
 • clear sidebar <b>:clear</b>
 • model validation <b>:validate</b>
 • security insights <b>:insights</b>
+• security threats <b>:threats</b>
 • generate security report <b>:report</b>
 • configure settings <b>:settings</b>
 • search for attributes <b><keyword></b>`
@@ -72,6 +74,7 @@ module.exports = function (
 • clear sidebar <b>:clear</b>
 • model validation <b>:validate</b>
 • security insights <b>:insights</b>
+• security threats <b>:threats</b>
 • generate security report <b>:report</b>
 • configure settings <b>:settings</b>
 • search for attributes <b><keyword></b>`
@@ -116,6 +119,11 @@ module.exports = function (
       case ':insights':
         if (phase === 'implementation') {
           insights(cy)
+        }
+        break
+      case ':threats':
+        if (phase === 'implementation') {
+          threats(cy)
         }
         break
       case ':validate':
