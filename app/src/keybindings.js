@@ -22,7 +22,6 @@ const settingsWindow = require('./helpers/settingsMenu/createSettingsWindow.js')
 
 // require implementation modules
 const insights = require('./imp/insights.js')
-const threats = require('./imp/threats.js')
 
 // require helpers for the buttons
 const buttonHelpers = require('./buttons/buttonHelpers.js')
@@ -123,7 +122,7 @@ module.exports = function (
         break
       case ':threats':
         if (phase === 'implementation') {
-          threats(cy)
+          insights(cy, 'threats')
         }
         break
       case ':validate':

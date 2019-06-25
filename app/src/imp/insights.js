@@ -1,5 +1,6 @@
 // displays security insight depending on information found in the model
-const list = require('./insightsList')
+const insightList = require('./insightsList')
+const threatList = require('./threatsList')
 const bubbleHTML = require('../helpers/bubbleHTML.js')
 
 /**
@@ -46,12 +47,19 @@ const showResults = (nodeIDArray, insight) => {
  * brings attention the insecure nodes
  *
  * @param {Object} cy cytoscape instance
+ * @param {String} listType threats or insights. Accepted values insights, threats
  */
-module.exports = function insights (cy) {
+module.exports = function insights (cy, listType = 'insights') {
+  let list
+  if (listType === 'insights') {
+    list = insightList
+  } else if (listType === 'threats') {
+    list = threatList
+  }
   // fade out all the nodes
   cy.elements().addClass('faded')
 
-  // parses the graph to compare nodes with the insight list
+  // parses the graph to compare nodes with the insight/threat list
   cy.nodes().map(node => {
     Object.keys(list).map(key => {
       findNodes(
@@ -64,7 +72,7 @@ module.exports = function insights (cy) {
     })
   })
 
-  // display the insights on the message area
+  // display the insights/threats on the message area
   Object.keys(list).map(key => {
     showResults(list[key].nodes, list[key].insight)
   })
@@ -84,7 +92,7 @@ module.exports = function insights (cy) {
       cy.nodes().addClass('label-id')
     })
   } else {
-    bubbleHTML('No security insights were found.')
+    bubbleHTML(`No security ${listType} were found.`)
   }
 
   // empty stored values to prevent repeating entries on other function calls
