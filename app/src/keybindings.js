@@ -56,8 +56,8 @@ module.exports = function (
 • change color theme <b>:toggle</b>
 • clear sidebar <b>:clear</b>
 • model validation <b>:validate</b>
-• security insights <b>:insights</b>
-• security threats <b>:threats</b>
+• find constraints <b>:find constraints</b>
+• find threats <b>:find threats</b>
 • generate security report <b>:report</b>
 • configure settings <b>:settings</b>
 • search for attributes <b><keyword></b>`
