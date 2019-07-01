@@ -32,9 +32,13 @@ module.exports = function generateReport (cy) {
 
   const numberOfThreats = `Number of threats: ${threatsArray.length}\n`
 
-  const numberOfVulnerabilities = `Number of Vulnerabilities: ${vulnerabilityArray.length}\n`
+  const numberOfVulnerabilities = `Number of Vulnerabilities: ${
+    vulnerabilityArray.length
+  }\n`
 
-  const numberOfTConstraints = `Number of constraints: ${constraintsArray.length}\n`
+  const numberOfTConstraints = `Number of constraints: ${
+    constraintsArray.length
+  }\n`
 
   const numberOfMechanisms = `Number of mechanisms: ${mechanismsArray.length}\n`
 
