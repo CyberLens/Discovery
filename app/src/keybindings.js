@@ -57,6 +57,7 @@ module.exports = function (
 • clear sidebar <b>:clear</b>
 • model validation <b>:validate</b>
 • security insights <b>:insights</b>
+• security threats <b>:threats</b>
 • generate security report <b>:report</b>
 • configure settings <b>:settings</b>
 • search for attributes <b><keyword></b>`
@@ -72,6 +73,7 @@ module.exports = function (
 • clear sidebar <b>:clear</b>
 • model validation <b>:validate</b>
 • security insights <b>:insights</b>
+• security threats <b>:threats</b>
 • generate security report <b>:report</b>
 • configure settings <b>:settings</b>
 • search for attributes <b><keyword></b>`
@@ -116,6 +118,11 @@ module.exports = function (
       case ':insights':
         if (phase === 'implementation') {
           insights(cy)
+        }
+        break
+      case ':threats':
+        if (phase === 'implementation') {
+          insights(cy, 'threats')
         }
         break
       case ':validate':
