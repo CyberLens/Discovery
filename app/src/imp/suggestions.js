@@ -1,5 +1,5 @@
 // displays security insight depending on information found in the model
-const insightList = require('./insightsList')
+const insightList = require('./constraintsList')
 const threatList = require('./threatsList')
 const bubbleHTML = require('../helpers/bubbleHTML.js')
 
@@ -32,7 +32,7 @@ let emptyInsightCounter = 0
  * displays the nodes of interest and the insight
  *
  * @param {Array} nodeArray array that stores the insecure nodes
- * @param {string} insight security insight based on the insightsList
+ * @param {string} insight security insight based on the constraints and threat lists
  */
 const showResults = (nodeIDArray, insight) => {
   // only show the insight if the node array is not empty
@@ -49,9 +49,9 @@ const showResults = (nodeIDArray, insight) => {
  * @param {Object} cy cytoscape instance
  * @param {String} listType threats or insights. Accepted values insights, threats
  */
-module.exports = function insights (cy, listType = 'insights') {
+module.exports = function insights (cy, listType) {
   let list
-  if (listType === 'insights') {
+  if (listType === 'constraints') {
     list = insightList
   } else if (listType === 'threats') {
     list = threatList
@@ -72,9 +72,9 @@ module.exports = function insights (cy, listType = 'insights') {
     })
   })
 
-  // display the insights/threats on the message area
+  // display the constraints/threats on the message area
   Object.keys(list).map(key => {
-    showResults(list[key].nodes, list[key].insight)
+    showResults(list[key].nodes, list[key].suggestion)
   })
 
   if (emptyInsightCounter !== Object.keys(list).length) {

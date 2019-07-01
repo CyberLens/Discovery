@@ -21,7 +21,7 @@ const watcher = require('./helpers/watcher.js')
 const settingsWindow = require('./helpers/settingsMenu/createSettingsWindow.js')
 
 // require implementation modules
-const insights = require('./imp/insights.js')
+const insights = require('./imp/suggestions.js')
 
 // require helpers for the buttons
 const buttonHelpers = require('./buttons/buttonHelpers.js')
@@ -72,8 +72,8 @@ module.exports = function (
 • change color theme <b>:toggle</b>
 • clear sidebar <b>:clear</b>
 • model validation <b>:validate</b>
-• security insights <b>:insights</b>
-• security threats <b>:threats</b>
+• find constraints <b>:find constraints</b>
+• find threats <b>:find threats</b>
 • generate security report <b>:report</b>
 • configure settings <b>:settings</b>
 • search for attributes <b><keyword></b>`
@@ -115,12 +115,12 @@ module.exports = function (
           remote.shell.openExternal(urls.docsURL)
         })
         break
-      case ':insights':
+      case ':find constraints':
         if (phase === 'implementation') {
-          insights(cy)
+          insights(cy, 'constraints')
         }
         break
-      case ':threats':
+      case ':find threats':
         if (phase === 'implementation') {
           insights(cy, 'threats')
         }
