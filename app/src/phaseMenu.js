@@ -8,7 +8,7 @@ const pcapImport = require('./imp/pcapImport.js')
 const template = '../settings/modelTemplate.js'
 const testGraph = '../../../sample/smartHome.js'
 
-let cy = {}
+const cy = {}
 
 /**
  * loads the empty template

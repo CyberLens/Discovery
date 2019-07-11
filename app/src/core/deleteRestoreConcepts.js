@@ -3,7 +3,7 @@
 const printTotalNodes = require('./printTotalNodes.js')
 
 // holds the deleted nodes
-let deletedNodes = []
+const deletedNodes = []
 // used as module
 
 /**

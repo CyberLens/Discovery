@@ -11,10 +11,10 @@ const addEdge = require('../core/addEdge.js')
  * @param {Object} trgNode target node
  */
 module.exports = function addComponent (cy, srcNode, trgNode) {
-  let srcNodeId = srcNode.id
-  let trgNodeId = trgNode.id
-  let srcNodeCpt = srcNode.asto.concept
-  let trgNodeCpt = trgNode.asto.concept
+  const srcNodeId = srcNode.id
+  const trgNodeId = trgNode.id
+  const srcNodeCpt = srcNode.asto.concept
+  const trgNodeCpt = trgNode.asto.concept
 
   switch (true) {
     case srcNodeCpt === 'net' && trgNodeCpt === 'micronet':

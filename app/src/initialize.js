@@ -28,19 +28,19 @@ module.exports = function initialize (cy, phase) {
 
   // global variables, used in cy.on
   // initialize export variables to prevent undefined errors
-  let selectedNode = {
+  const selectedNode = {
     out: {}
   }
-  let oldSelectedNode = {
+  const oldSelectedNode = {
     out: {}
   }
-  let selectedEdge = {
+  const selectedEdge = {
     out: {}
   }
-  let srcNode = {
+  const srcNode = {
     out: {}
   }
-  let trgNode = {
+  const trgNode = {
     out: {}
   }
 

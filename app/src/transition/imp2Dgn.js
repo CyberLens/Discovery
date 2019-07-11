@@ -10,7 +10,7 @@ const bubbleHTML = require('../helpers/bubbleHTML.js')
  * @param {Object} cy cytoscape instance
  */
 const transition = cy => {
-  let neighbors = []
+  const neighbors = []
   cy.nodes().map(node => {
     if (node.data().asto.concept === 'device') {
       delete node.data().asto.layer
