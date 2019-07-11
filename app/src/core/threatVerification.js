@@ -25,17 +25,15 @@ module.exports = function threatVerification (cy) {
     }
   })
 
-  // checks if threat node is connected to a constraint node
+  // checks if a threat node is connected to a constraint node
   threatArray.map(threat => {
-    const neighbor = threat.neighborhood()
+    const neighbor = threat.neighborhood('node')
     neighbor.map(type => {
-      if (type.data().hasOwnProperty('asto') === true) {
-        if (type.data().asto.concept === 'constraint') {
-          result = `${result} • Threat ${
-            threat.data().id
-          } mitigated by Constraint ${type.data().id}\n`
-          mitigatedThreats += 1
-        }
+      if (type.data().asto.concept === 'constraint') {
+        result = `${result} • Threat ${
+          threat.data().id
+        } mitigated by Constraint ${type.data().id}\n`
+        mitigatedThreats += 1
       }
     })
   })
