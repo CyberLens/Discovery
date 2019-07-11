@@ -62,7 +62,7 @@ const selectionLayout = (
   selectionForm.appendChild(selectionLabel)
   selectionForm.appendChild(selectionList)
   selectionOptions.map(value => {
-    let option = document.createElement('option')
+    const option = document.createElement('option')
     option.value = value
     option.text = value
     selectionList.appendChild(option)
@@ -84,7 +84,7 @@ const createForm = selectedNode => {
   form.className = 'bubble'
   form.id = 'form-id'
 
-  let inputIds = []
+  const inputIds = []
 
   const nodeData = selectedNode.data().asto
   Object.keys(nodeData).map(key => {
@@ -142,7 +142,7 @@ const createForm = selectedNode => {
   const formId = document.getElementById('form-id')
   formId.onsubmit = () => {
     inputIds.map(keyValue => {
-      let id = document.getElementById(keyValue)
+      const id = document.getElementById(keyValue)
       selectedNode.data().asto[keyValue] = id.value
     })
     // remove elements once the submit is clicked

@@ -48,9 +48,7 @@ const requestVulnerableData = keywords => {
 
         // displays the total amount of vulnerabilities
         bubbleHTML(
-          `${vulnerability} vulnerabilities found: <strong>${
-            vulnerabilities.length
-          }</strong>`
+          `${vulnerability} vulnerabilities found: <strong>${vulnerabilities.length}</strong>`
         )
 
         // when the requests are finished ask if the file is to saved
@@ -137,9 +135,7 @@ const getUniqueKeywords = keywords => {
 const findVulnerabilities = cy => {
   findVulnerableNodes(cy)
 
-  const permission = `Do you want to send a request to <strong>${
-    settings.cveSearchUrl
-  }</strong> <button id='yes-${buttonIdCounter}' class='menu-button' style='color: var(--main-tx-color); background-color: var(--main-bg-color); width: 45px; height: 25px;'>yes?</button>`
+  const permission = `Do you want to send a request to <strong>${settings.cveSearchUrl}</strong> <button id='yes-${buttonIdCounter}' class='menu-button' style='color: var(--main-tx-color); background-color: var(--main-bg-color); width: 45px; height: 25px;'>yes?</button>`
 
   // check whether the keywords is empty before sending
   // the request to a vulnerability database

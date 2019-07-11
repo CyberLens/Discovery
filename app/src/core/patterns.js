@@ -38,10 +38,10 @@ module.exports = function patterns (cy) {
   form.className = 'bubble'
   form.id = 'form-id'
 
-  let label = document.createElement('label')
+  const label = document.createElement('label')
   label.textContent = `keywords (spaces): `
 
-  let input = document.createElement('input')
+  const input = document.createElement('input')
   input.className = 'input-form'
   input.id = 'pattern-id'
   input.type = 'text'
@@ -60,8 +60,8 @@ module.exports = function patterns (cy) {
 
   const formId = document.getElementById('form-id')
   formId.onsubmit = () => {
-    let keywords = document.getElementById('pattern-id')
-    let pattern = `${keywords.value}`.split(' ')
+    const keywords = document.getElementById('pattern-id')
+    const pattern = `${keywords.value}`.split(' ')
 
     rmElement('message-area-id', 'form-id')
 

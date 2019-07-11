@@ -6,7 +6,7 @@ const bubbleTxt = require('../helpers/bubbleTxt.js')
  * @param {Object} cy cytoscape instance
  */
 module.exports = function threatVerification (cy) {
-  let threatArray = []
+  const threatArray = []
   let result = ''
   let mitigatedThreats = 0
 

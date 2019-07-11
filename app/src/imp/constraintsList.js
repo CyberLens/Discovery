@@ -57,7 +57,8 @@ const constraintsList = {
     concept: 'application',
     attribute: 'update',
     attributeValue: 'action',
-    suggestion: 'Define a policy to update Applications that require user action.',
+    suggestion:
+      'Define a policy to update Applications that require user action.',
     nodes: []
   }
 }

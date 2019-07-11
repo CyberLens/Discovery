@@ -42,7 +42,7 @@ const createForm = selectedEdge => {
   const formId = document.getElementById('form-id')
   // capture the changed values of the node
   formId.onsubmit = () => {
-    let id = document.getElementById('label-form')
+    const id = document.getElementById('label-form')
     selectedEdge.data().label = id.value
 
     // remove elements once the submit is clicked

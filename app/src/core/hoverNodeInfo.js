@@ -10,12 +10,8 @@ module.exports = function nodeInfo (node) {
   let nodeInfo = ''
   const nodeData = node.data().asto
   Object.keys(nodeData).map(i => {
-    // adds the keys of the object to the string
-    if (nodeData.hasOwnProperty(i) === true) {
-      nodeInfo = `${nodeInfo} • ${i}:`
-    }
-    // adds the values of the object to the string
-    nodeInfo = `${nodeInfo} ${nodeData[i]}\n`
+    // adds the keys and values of the object to the string
+    nodeInfo = `${nodeInfo} • ${i}: ${nodeData[i]}\n`
   })
 
   // appends info to the div

@@ -15,7 +15,7 @@ let nodeContentJs = ''
 let edgeContentJs = ''
 
 // stores the connections in the following format source, target, network protocol
-let connection = []
+const connection = []
 // stores the total number device nodes
 let deviceNodes = []
 // stores all the connections (even duplicates src -> trg to trg -> src)
@@ -27,12 +27,12 @@ let allConnections = []
  * @param {string} txtData data from the network text file
  */
 const storeConnections = txtData => {
-  let srcNodes = []
+  const srcNodes = []
   // store the target concepts
-  let trgNodes = []
+  const trgNodes = []
 
   txtData.map(eachLine => {
-    let row = eachLine.split(' ')
+    const row = eachLine.split(' ')
     if (row[1] !== undefined && row[3] !== undefined) {
       srcNodes.push(row[1])
       trgNodes.push(row[3].replace(':', ''))
@@ -56,17 +56,17 @@ let uniqueConnections = []
  */
 const removeServices = allConnections => {
   let counter = 0
-  let uniqueLine = []
+  const uniqueLine = []
   // removes the services from the devices IP
   allConnections.map(row => {
-    let element = row.split(' ')
-    let src = element[0].split('.')
+    const element = row.split(' ')
+    const src = element[0].split('.')
     src.pop()
-    let srcIP = src.join('.')
+    const srcIP = src.join('.')
 
-    let trg = element[1].split('.')
+    const trg = element[1].split('.')
     trg.pop()
-    let trgIP = trg.join('.')
+    const trgIP = trg.join('.')
 
     // attempt to remove the duplicate connections
     // some connections have the same nodes but in opposite directions
@@ -83,7 +83,7 @@ const removeServices = allConnections => {
 }
 
 // to store the unique devices IP [key] and services [array]
-let uniqueDevicesServices = {}
+const uniqueDevicesServices = {}
 // to store the unique devices IP
 let uniqueDevices = []
 
@@ -94,9 +94,9 @@ let uniqueDevices = []
  */
 const storeUniqueDevicesServices = devices => {
   Object.keys(devices).map(key => {
-    let nodeInformation = devices[key].split('.')
-    let nodeService = nodeInformation.pop()
-    let nodeIP = nodeInformation.join('.')
+    const nodeInformation = devices[key].split('.')
+    const nodeService = nodeInformation.pop()
+    const nodeIP = nodeInformation.join('.')
 
     if (Object.keys(uniqueDevicesServices).length === 0) {
       uniqueDevicesServices[nodeIP] = nodeService
@@ -151,7 +151,7 @@ const createDevicesApplications = devicesServices => {
   let deviceIdCounter = 0 // device concepts start from 0
 
   Object.keys(devicesServices).map(i => {
-    let services = devicesServices[i].split(' ')
+    const services = devicesServices[i].split(' ')
     services.map(service => {
       if (service !== 'undefined') {
         // checks if port service is known
@@ -200,7 +200,7 @@ const createDevicesApplications = devicesServices => {
 const createConnections = (devices, connections) => {
   // creates the edges and the connection nodes concept
   connections.map(row => {
-    let element = row.split(' ')
+    const element = row.split(' ')
 
     // creates the connection nodes
     nodeContentJs += ` {
