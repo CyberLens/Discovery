@@ -7,7 +7,7 @@ const settings = require(`${userDataPath}/astoSettings.js`)
 const nodeSelection = require('../core/nodeSelection.js')
 const layout = require('../core/layout.js')
 const moduleSelection = require('../core/moduleSelection.js')
-const threatVerification = require('../core/threatVerification.js')
+const verification = require('../core/verification.js')
 const deleteRestoreConcepts = require('../core/deleteRestoreConcepts.js')
 const patterns = require('../core/patterns.js')
 const printTotalNodes = require('../core/printTotalNodes.js')
@@ -15,7 +15,6 @@ const expose = require('../core/expose.js')
 const labels = require('../core/labels.js')
 
 const findVulnerabilities = require('../imp/findVulnerabilities.js')
-const vulnerabilityVerification = require('../imp/vulnerabilityVerification.js')
 
 const save = require('../helpers/save.js')
 const watcher = require('../helpers/watcher.js')
@@ -133,7 +132,7 @@ module.exports = function buttons (
     // verify threats
     const buttonThreatVerify = document.getElementById('threat-ver-btn')
     buttonThreatVerify.addEventListener('click', () => {
-      threatVerification(cy)
+      verification(cy, 'threat', 'constraint')
     })
 
     // model transition
@@ -157,7 +156,7 @@ module.exports = function buttons (
     // verify threats
     const buttonThreatVerify = document.getElementById('threat-ver-btn')
     buttonThreatVerify.addEventListener('click', () => {
-      threatVerification(cy)
+      verification(cy, 'threat', 'constraint')
     })
 
     // model transition
@@ -171,7 +170,7 @@ module.exports = function buttons (
       'vuln-ver-btn'
     )
     buttonVulnerabilityVerification.addEventListener('click', () => {
-      vulnerabilityVerification(cy)
+      verification(cy, 'vulnerability', 'mechanism')
     })
 
     // find vulnerabilities
