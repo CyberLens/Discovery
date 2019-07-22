@@ -69,6 +69,6 @@
     "electron": "^5.0.7",
     "electron-builder": "^21.1.1",
     "prettier": "^1.18.2",
-    "standard": "^13.0.2"
+    "standard": "^13.1.0"
   }
 }
