@@ -24,7 +24,7 @@ module.exports = function generateReport (cy) {
     }
   })
 
-  const reportTittle = `# Security Report\n\n`
+  const reportTittle = '# Security Report\n\n'
 
   const numberOfComponents = `Number of components: ${
     cy.elements().nodes().length

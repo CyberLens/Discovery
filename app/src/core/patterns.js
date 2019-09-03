@@ -39,7 +39,7 @@ module.exports = function patterns (cy) {
   form.id = 'form-id'
 
   const label = document.createElement('label')
-  label.textContent = `keywords (spaces): `
+  label.textContent = 'keywords (spaces): '
 
   const input = document.createElement('input')
   input.className = 'input-form'
