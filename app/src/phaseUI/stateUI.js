@@ -4,7 +4,7 @@ const phaseMenu = require('../../src/phaseMenu.js')
 module.exports = function stateUI () {
   // shows design phase on the title
   const title = document.getElementById('title-phase-id')
-  title.textContent = `state diagram`
+  title.textContent = 'state diagram'
 
   // show sidebars
   const actionBar = document.getElementById('action-bar-id')

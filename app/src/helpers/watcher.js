@@ -13,7 +13,7 @@ const nodes = (graphNodes, cy) => {
   const titleFilePath = document.getElementById('title-file-path-id')
 
   if (graphNodes.same(cy.nodes()) === false && changeToken === false) {
-    titleFilePath.innerHTML += `<span style='color: var(--blue-color);'> •</span>`
+    titleFilePath.innerHTML += '<span style=\'color: var(--blue-color);\'> •</span>'
     changeToken = true
   } else if (graphNodes.same(cy.nodes()) === true && changeToken === true) {
     titleFilePath.innerHTML = titleFilePath.innerHTML.replace(' •', ' ')

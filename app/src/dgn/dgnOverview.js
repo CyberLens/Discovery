@@ -86,7 +86,7 @@ module.exports = function overview (cy) {
     composeOutput(module, moduleNodes[module].numberOfNodes)
   })
   // new line between modules and concepts
-  output += `\n`
+  output += '\n'
   Object.keys(graphNodes).map(node => {
     composeOutput(node, graphNodes[node].numberOfNodes)
   })
