@@ -79,7 +79,8 @@ module.exports = function insights (cy, listType) {
 
   if (emptyInsightCounter !== Object.keys(list).length) {
     // button to show the ID of the nodes
-    const showIDBtn = '<button id=\'id-button\' class=\'menu-button\' style=\'color: var(--main-tx-color); background-color: var(--main-bg-color); width: 120px; height: 25px;\'>show nodes ID</button>'
+    const showIDBtn =
+      "<button id='id-button' class='menu-button' style='color: var(--main-tx-color); background-color: var(--main-bg-color); width: 120px; height: 25px;'>show nodes ID</button>"
 
     // render the showID button
     bubbleHTML(showIDBtn)
