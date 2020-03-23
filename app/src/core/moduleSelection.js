@@ -53,7 +53,7 @@ module.exports = function moduleSelection (cy, selection) {
   let totalNodes = 0
   // removes the faded class from the selected module
   // and adds its nodes to the node count
-  cy.nodes().map(node => {
+  cy.nodes().map((node) => {
     const nodeConcept = node.data().asto.concept
     if (groupArray.includes(nodeConcept) === true) {
       node.removeClass('faded')

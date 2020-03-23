@@ -47,7 +47,7 @@ const closeNotification = () => {
         message: 'Do you want to navigate to the home  menu?',
         buttons: ['No', 'Yes']
       },
-      response => {
+      (response) => {
         // is the response is Yes navigate to the index.html
         if (response === 1) {
           window.location.href = `file://${__dirname}/../../static/index.html`

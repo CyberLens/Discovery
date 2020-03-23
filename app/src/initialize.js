@@ -48,7 +48,7 @@ module.exports = function initialize (cy, phase) {
   const graphNodes = cy.nodes()
   // counter variable to create unique sequential node ids in addComponents.js
   let nodeCounterID = ''
-  cy.nodes().map(node => {
+  cy.nodes().map((node) => {
     nodeCounterID = node.data().id
   })
   // turn the counter into an number and remove the 'n'
@@ -56,7 +56,7 @@ module.exports = function initialize (cy, phase) {
 
   // cy.on performs actions on interactions with the graph
   // actions when tapping on node
-  cy.on('tap', 'node', selection => {
+  cy.on('tap', 'node', (selection) => {
     // removes previous selections classes
     cy.elements().removeClass('selection')
     cy.elements().removeClass('attention')
@@ -84,7 +84,7 @@ module.exports = function initialize (cy, phase) {
     rmElement('window-id', 'stageMenu-id') // remove stage menu element
   })
   // actions when tapping on an edge
-  cy.on('tap', 'edge', selection => {
+  cy.on('tap', 'edge', (selection) => {
     // removes previous selections
     cy.elements().removeClass('selection')
     cy.elements().removeClass('attention')
@@ -105,7 +105,7 @@ module.exports = function initialize (cy, phase) {
     rmElement('window-id', 'stageMenu-id') // remove stage menu element
   })
   // actions when tapping the stage
-  cy.on('tap', selection => {
+  cy.on('tap', (selection) => {
     // checks if only the stage was clicked
     if (selection.target === cy) {
       // removes previous selections
@@ -128,7 +128,7 @@ module.exports = function initialize (cy, phase) {
     }
   })
   // right clicking on node
-  cy.on('cxttap', 'node', selection => {
+  cy.on('cxttap', 'node', (selection) => {
     selectedNode.out = selection.target[0]
     editMenu.nodeMenu(cy, selection, selectedNode.out)
 
@@ -142,12 +142,12 @@ module.exports = function initialize (cy, phase) {
   // right click on edge to edit
   // only available in state diagrams
   if (phase === 'state') {
-    cy.on('cxttap', 'edge', selection => {
+    cy.on('cxttap', 'edge', (selection) => {
       editEdge(selection.target[0])
     })
   }
   // right clicking on stage
-  cy.on('cxttap', selection => {
+  cy.on('cxttap', (selection) => {
     // checks if only the stage was clicked
     if (selection.target === cy) {
       // removes the stage menu if it exists
@@ -156,11 +156,11 @@ module.exports = function initialize (cy, phase) {
     }
   })
   // actions when hovering over a node
-  cy.on('mouseover', 'node', event => {
+  cy.on('mouseover', 'node', (event) => {
     hoverNodeInfo(event.target[0]) // global module
   })
   // actions when hovering out of a node
-  cy.on('mouseout', 'node', event => {
+  cy.on('mouseout', 'node', (event) => {
     // hides the hover container
     document.getElementById('container-node-id').style.display = 'none'
   })

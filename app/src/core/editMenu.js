@@ -13,7 +13,7 @@ let posX = ''
  *
  * @param {Object} position of the selected element
  */
-const mousePosition = position => {
+const mousePosition = (position) => {
   posX = position.renderedPosition.x
   posY = position.renderedPosition.y
 }
@@ -45,7 +45,7 @@ const nodeMenu = (cy, position, selectedNode) => {
       </ul>
     </div>`
 
-    nodeMenu.addEventListener('click', e => {
+    nodeMenu.addEventListener('click', (e) => {
       const event = e.target.textContent
 
       if (event === 'show neighbors') {
@@ -92,7 +92,7 @@ const stageMenu = (cy, position) => {
 
     graph.appendChild(stageMenu)
 
-    stageMenu.addEventListener('click', e => {
+    stageMenu.addEventListener('click', (e) => {
       const event = e.target.textContent
 
       if (event === 'center graph') {

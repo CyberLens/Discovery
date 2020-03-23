@@ -37,7 +37,7 @@ const deleteConcept = (cy, selectedNode, selectedEdge) => {
  *
  * @param {Object} cy cytoscape instance
  */
-const restoreNode = cy => {
+const restoreNode = (cy) => {
   if (deletedNodes.length !== 0) {
     deletedNodes.pop().restore()
     printTotalNodes(cy)

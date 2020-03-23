@@ -11,7 +11,7 @@ const settings = require(`${userDataPath}/astoSettings.js`)
  *
  * @param {string} color light or dark
  */
-const setTheme = color => {
+const setTheme = (color) => {
   // update color variables
   settings.setColors(color)
 

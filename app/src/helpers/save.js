@@ -4,7 +4,7 @@ const bubbleTxt = require('./bubbleTxt.js')
 const jsonfileWrite = require('jsonfile').writeFile
 const { dialog } = require('electron').remote
 
-const updateTittle = file => {
+const updateTittle = (file) => {
   const titleFilePath = document.getElementById('title-file-path-id')
   titleFilePath.textContent = ` ~/${file}`
 }
@@ -27,8 +27,8 @@ module.exports = function save (cy) {
         }
       ]
     },
-    fileToSave => {
-      jsonfileWrite(fileToSave, fullGraph, err => {
+    (fileToSave) => {
+      jsonfileWrite(fileToSave, fullGraph, (err) => {
         if (err) {
           dialog.showErrorBox('Error while saving the file', err.message)
         } else {

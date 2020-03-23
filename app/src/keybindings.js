@@ -85,7 +85,7 @@ module.exports = function (
   const cmdID = document.getElementById('cmd-id')
   const labelId = document.getElementById('input-label-id')
   // indicate focus on the console by making the > blue
-  cmdID.addEventListener('focus', e => {
+  cmdID.addEventListener('focus', (e) => {
     labelId.style.color = settings.blue
   })
   // indicate loss of focus on the console by making the > default color
@@ -94,7 +94,7 @@ module.exports = function (
   })
 
   // removes the focus from the console when tapping on the graph container
-  cy.on('tap', selection => cmdID.blur())
+  cy.on('tap', (selection) => cmdID.blur())
 
   /** instantiation of console commands */
   const commands = () => {
@@ -158,7 +158,7 @@ module.exports = function (
   }
 
   // declare keyboard listeners on keydown
-  document.addEventListener('keydown', event => {
+  document.addEventListener('keydown', (event) => {
     let metaKey = ''
     // checks the platform to assign the correct meta key
     process.platform === 'darwin'

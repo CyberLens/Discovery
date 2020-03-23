@@ -26,12 +26,12 @@ let allConnections = []
  *
  * @param {string} txtData data from the network text file
  */
-const storeConnections = txtData => {
+const storeConnections = (txtData) => {
   const srcNodes = []
   // store the target concepts
   const trgNodes = []
 
-  txtData.map(eachLine => {
+  txtData.map((eachLine) => {
     const row = eachLine.split(' ')
     if (row[1] !== undefined && row[3] !== undefined) {
       srcNodes.push(row[1])
@@ -54,11 +54,11 @@ let uniqueConnections = []
  *
  * @param {Set} allConnections all connections (even duplicates)
  */
-const removeServices = allConnections => {
+const removeServices = (allConnections) => {
   let counter = 0
   const uniqueLine = []
   // removes the services from the devices IP
-  allConnections.map(row => {
+  allConnections.map((row) => {
     const element = row.split(' ')
     const src = element[0].split('.')
     src.pop()
@@ -92,8 +92,8 @@ let uniqueDevices = []
  *
  * @param {object} devices nodes
  */
-const storeUniqueDevicesServices = devices => {
-  Object.keys(devices).map(key => {
+const storeUniqueDevicesServices = (devices) => {
+  Object.keys(devices).map((key) => {
     const nodeInformation = devices[key].split('.')
     const nodeService = nodeInformation.pop()
     const nodeIP = nodeInformation.join('.')
@@ -118,8 +118,8 @@ let idCounter = 0
  *
  * @param {object} uniqueDevicesServices
  */
-const createDevices = uniqueDevicesServices => {
-  Object.keys(uniqueDevicesServices).map(deviceIp => {
+const createDevices = (uniqueDevicesServices) => {
+  Object.keys(uniqueDevicesServices).map((deviceIp) => {
     nodeContentJs += `
   {
     data: {
@@ -147,15 +147,15 @@ const createDevices = uniqueDevicesServices => {
  *
  * @param {object} devicesServices
  */
-const createDevicesApplications = devicesServices => {
+const createDevicesApplications = (devicesServices) => {
   let deviceIdCounter = 0 // device concepts start from 0
 
-  Object.keys(devicesServices).map(i => {
+  Object.keys(devicesServices).map((i) => {
     const services = devicesServices[i].split(' ')
-    services.map(service => {
+    services.map((service) => {
       if (service !== 'undefined') {
         // checks if port service is known
-        Object.keys(commonPorts).map(port => {
+        Object.keys(commonPorts).map((port) => {
           if (port === service) {
             service = `${port} ${commonPorts[port]}`
           }
@@ -199,7 +199,7 @@ const createDevicesApplications = devicesServices => {
  */
 const createConnections = (devices, connections) => {
   // creates the edges and the connection nodes concept
-  connections.map(row => {
+  connections.map((row) => {
     const element = row.split(' ')
 
     // creates the connection nodes
@@ -219,12 +219,12 @@ const createConnections = (devices, connections) => {
     // find the nodes id to create the edges
     let srcId = ''
     let trgId = ''
-    Object.keys(devices).map(id => {
+    Object.keys(devices).map((id) => {
       if (devices[id] === element[0]) {
         srcId = id
       }
     })
-    Object.keys(devices).map(id => {
+    Object.keys(devices).map((id) => {
       if (devices[id] === element[1]) {
         trgId = id
       }
@@ -277,7 +277,7 @@ const writeGraph = (cy, filename, devices, connections) => {
     .concat(fileEnd)
 
   // writes the graph on file
-  writeFile(`${filename}.js`, toWrite, err => {
+  writeFile(`${filename}.js`, toWrite, (err) => {
     if (err) throw err
 
     // loads the created graph on the tool
@@ -305,7 +305,7 @@ const readTxtFile = (cy, filename) => {
     writeGraph(cy, filename, deviceNodes, uniqueConnections)
   })
   // deletes the text file
-  unlink(`${filename}`, err => {
+  unlink(`${filename}`, (err) => {
     if (err) throw err
   })
 }
@@ -333,13 +333,13 @@ module.exports = function pcapImport (cy, phase) {
         properties: [...dialogOptions],
         filters: [{ name: 'pcap', extensions: ['pcapng', 'pcap'] }]
       },
-      pcapngFiles => {
+      (pcapngFiles) => {
         if (pcapngFiles === undefined) return
 
         const pcapngFile = pcapngFiles[0]
 
         // ask for save location for the new file
-        dialog.showSaveDialog(filename => {
+        dialog.showSaveDialog((filename) => {
           // tcpdump command to be executed
           const tcpDumpCommand = `tcpdump -qtn -r ${pcapngFile} > ${filename}`
 

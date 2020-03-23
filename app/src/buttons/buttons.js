@@ -49,7 +49,7 @@ module.exports = function buttons (
 ) {
   // adds nodes specific to each phase
   const addNode = document.getElementById('add-component-id')
-  addNode.addEventListener('click', event => {
+  addNode.addEventListener('click', (event) => {
     nodeCounter += 1 // used for the id of the node
     buttonHelpers.addComponents(cy, event, nodeCounter, phase)
     cy.nodes().addClass('label-nodes')
@@ -68,7 +68,7 @@ module.exports = function buttons (
 
   // highlights only the selected node class
   const buttonSelectNodeClass = document.getElementById('selection-id')
-  buttonSelectNodeClass.addEventListener('click', e =>
+  buttonSelectNodeClass.addEventListener('click', (e) =>
     nodeSelection(cy, e.target.textContent)
   )
 
@@ -83,7 +83,7 @@ module.exports = function buttons (
 
   // applies the selected layout to the graph, uses the layout.js module
   const buttonLayout = document.getElementById('layout-btn')
-  buttonLayout.addEventListener('click', e => {
+  buttonLayout.addEventListener('click', (e) => {
     layout(cy, e.target.textContent)
   })
 
@@ -104,7 +104,7 @@ module.exports = function buttons (
   })
   // change the labels on the elements of the graph
   const buttonLabels = document.getElementById('labels-btn')
-  buttonLabels.addEventListener('click', e => {
+  buttonLabels.addEventListener('click', (e) => {
     labels(cy, e.target.textContent)
   })
   // toggles the theme
@@ -120,10 +120,10 @@ module.exports = function buttons (
   })
 
   const totalNodes = document.getElementById('legend-id')
-  totalNodes.addEventListener('mouseover', event => {
+  totalNodes.addEventListener('mouseover', (event) => {
     buttonHelpers.overviewHelper(cy, phase)
   })
-  totalNodes.addEventListener('mouseout', event => {
+  totalNodes.addEventListener('mouseout', (event) => {
     document.getElementById('container-node-id').style.display = 'none'
   })
 
@@ -143,7 +143,7 @@ module.exports = function buttons (
 
     // module selection
     const buttonModuleSelection = document.getElementById('module-group')
-    buttonModuleSelection.addEventListener('click', e => {
+    buttonModuleSelection.addEventListener('click', (e) => {
       moduleSelection(cy, e.target.textContent)
     })
 
@@ -187,7 +187,7 @@ module.exports = function buttons (
 
     // module selection
     const buttonModuleSelection = document.getElementById('module-group')
-    buttonModuleSelection.addEventListener('click', e => {
+    buttonModuleSelection.addEventListener('click', (e) => {
       moduleSelection(cy, e.target.textContent)
     })
   }

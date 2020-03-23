@@ -15,7 +15,7 @@ let buttonCounter = 0
  * @param {object} cy cytoscape instance
  */
 module.exports = function generateReport (cy) {
-  cy.nodes().map(node => {
+  cy.nodes().map((node) => {
     if (node.data().asto.concept === 'threat') {
       threatsArray.push(node)
     }
@@ -48,8 +48,8 @@ module.exports = function generateReport (cy) {
   const saveFile = () => {
     dialog.showSaveDialog(
       { filters: [{ name: 'markdown', extensions: ['md'] }] },
-      filename => {
-        writeFile(filename, dataToWrite, err => {
+      (filename) => {
+        writeFile(filename, dataToWrite, (err) => {
           if (err) console.error(`Error: ${err.message}`)
         })
         bubbleTxt('security report generated\n👍')

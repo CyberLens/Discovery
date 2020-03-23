@@ -9,9 +9,9 @@ const bubbleHTML = require('../helpers/bubbleHTML.js')
  *
  * @param {Object} cy cytoscape instance
  */
-const transition = cy => {
+const transition = (cy) => {
   const neighbors = []
-  cy.nodes().map(node => {
+  cy.nodes().map((node) => {
     if (node.data().asto.concept === 'device') {
       delete node.data().asto.layer
       delete node.data().asto.type
@@ -39,7 +39,7 @@ const transition = cy => {
    * removes the edges of the connections
    * adds news edges between the devices
    */
-  neighbors.map(node => {
+  neighbors.map((node) => {
     // remove the edges
     node[1].remove()
     node[3].remove()

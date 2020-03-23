@@ -7,7 +7,7 @@ const rmElement = require('../helpers/rmElement.js')
  *
  * @param {Object} selectedEdge selected edge
  */
-const createForm = selectedEdge => {
+const createForm = (selectedEdge) => {
   const htmlElement = document.getElementById('message-area-id')
   const form = document.createElement('form')
   form.className = 'bubble'
@@ -60,7 +60,7 @@ const createForm = selectedEdge => {
  *
  * @param {Object} selectedEdge selected edge
  */
-const formEdge = selectedEdge => {
+const formEdge = (selectedEdge) => {
   const form = document.getElementById('form-id')
   if (form !== null) {
     rmElement('message-area-id', 'form-id')

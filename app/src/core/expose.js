@@ -14,10 +14,10 @@ module.exports = function expose (cy) {
   if (btnToken === false) {
     const graph = document.getElementById('window-id')
 
-    cy.nodes().map(node => {
+    cy.nodes().map((node) => {
       let nodeInfo = ''
       const nodeData = node.data().asto
-      Object.keys(nodeData).map(i => {
+      Object.keys(nodeData).map((i) => {
         // adds the keys and values of the object to the string
         nodeInfo = `${nodeInfo} • ${i}: ${nodeData[i]}\n`
       })
@@ -39,7 +39,7 @@ module.exports = function expose (cy) {
     btnToken = true
   } else {
     // removes the exposed containers
-    cy.nodes().map(node => {
+    cy.nodes().map((node) => {
       rmElement('window-id', node.data().id)
     })
 

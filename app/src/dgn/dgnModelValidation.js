@@ -12,7 +12,7 @@ let arrWrong = [] // stores wrong connection of nodes
  * @param {Array} componentArray allowed connected components
  */
 const componentValidation = (cy, component, componentArray) => {
-  cy.nodes().map(node => {
+  cy.nodes().map((node) => {
     // checks if node is the desired component
     if (node.data().asto.concept === component) {
       // stores the neighboring nodes of the component
@@ -46,7 +46,7 @@ const componentValidation = (cy, component, componentArray) => {
  */
 module.exports = function moduleValidation (cy) {
   // checks the validity of the model using the rules of the schema
-  Object.keys(dgnSchema.pairs).map(concept => {
+  Object.keys(dgnSchema.pairs).map((concept) => {
     componentValidation(cy, concept, dgnSchema.pairs[concept])
   })
 

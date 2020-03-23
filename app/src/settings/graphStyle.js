@@ -7,7 +7,7 @@ const settings = require(`${userDataPath}/astoSettings.js`)
 
 const graphStyle = {}
 
-graphStyle.setStyle = color => {
+graphStyle.setStyle = (color) => {
   // set the graph's color values based on the app theme
   settings.setColors(color)
 

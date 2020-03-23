@@ -61,7 +61,7 @@ const selectionLayout = (
 
   selectionForm.appendChild(selectionLabel)
   selectionForm.appendChild(selectionList)
-  selectionOptions.map(value => {
+  selectionOptions.map((value) => {
     const option = document.createElement('option')
     option.value = value
     option.text = value
@@ -78,7 +78,7 @@ const selectionLayout = (
  *
  * @param {Object} selectedNode selected node
  */
-const createForm = selectedNode => {
+const createForm = (selectedNode) => {
   const htmlElement = document.getElementById('message-area-id')
   const form = document.createElement('form')
   form.className = 'bubble'
@@ -87,7 +87,7 @@ const createForm = selectedNode => {
   const inputIds = []
 
   const nodeData = selectedNode.data().asto
-  Object.keys(nodeData).map(key => {
+  Object.keys(nodeData).map((key) => {
     if (key === 'layer') {
       // device layer attribute
       selectionLayout(form, key, layerOptions, nodeData, inputIds)
@@ -141,7 +141,7 @@ const createForm = selectedNode => {
   // capture the changed values of the node
   const formId = document.getElementById('form-id')
   formId.onsubmit = () => {
-    inputIds.map(keyValue => {
+    inputIds.map((keyValue) => {
       const id = document.getElementById(keyValue)
       selectedNode.data().asto[keyValue] = id.value
     })
@@ -160,7 +160,7 @@ const createForm = selectedNode => {
  *
  * @param {Object} selectedNode selected node
  */
-const formNode = selectedNode => {
+const formNode = (selectedNode) => {
   const form = document.getElementById('form-id')
   if (form !== null) {
     rmElement('message-area-id', 'form-id')

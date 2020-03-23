@@ -23,7 +23,7 @@ module.exports = function load (cy, phase) {
       properties: [...dialogOptions],
       filters: [{ name: 'javascript', extensions: ['json', 'js'] }]
     },
-    fileNames => {
+    (fileNames) => {
       if (fileNames === undefined) return
 
       const fileName = fileNames[0]

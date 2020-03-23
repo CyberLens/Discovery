@@ -32,7 +32,7 @@ module.exports = function verification (cy, attribute1, attribute2) {
   cy.elements().addClass('faded')
 
   // highlights the nodes of interest
-  cy.nodes().map(node => {
+  cy.nodes().map((node) => {
     if (node.data().asto.concept === attribute1) {
       node.removeClass('faded')
       node.addClass('attention')
@@ -45,9 +45,9 @@ module.exports = function verification (cy, attribute1, attribute2) {
   })
 
   // checks if a node type is connected to another node type
-  nodeArray.map(node => {
+  nodeArray.map((node) => {
     const neighbor = node.neighborhood('node')
-    neighbor.map(type => {
+    neighbor.map((type) => {
       if (type.data().asto.concept === attribute2) {
         result = `${result} • ${concept1} ${
           node.data().id

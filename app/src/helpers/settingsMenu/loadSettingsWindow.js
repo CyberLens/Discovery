@@ -156,7 +156,7 @@ const settings = {
 module.exports = settings
 `
 
-  writeFile(`${userDataPath}/astoSettings.js`, newSettings, err => {
+  writeFile(`${userDataPath}/astoSettings.js`, newSettings, (err) => {
     if (err) throw err
   })
 
@@ -187,7 +187,7 @@ restoreBtn.addEventListener('click', () => {
   writeFile(
     `${userDataPath}/astoSettings.js`,
     defaultSettingsNormalize,
-    err => {
+    (err) => {
       if (err) throw err
     }
   )

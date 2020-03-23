@@ -9,7 +9,7 @@ module.exports = function nodeInfo (node) {
 
   let nodeInfo = ''
   const nodeData = node.data().asto
-  Object.keys(nodeData).map(i => {
+  Object.keys(nodeData).map((i) => {
     // adds the keys and values of the object to the string
     nodeInfo = `${nodeInfo} • ${i}: ${nodeData[i]}\n`
   })

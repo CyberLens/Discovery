@@ -60,8 +60,8 @@ module.exports = function insights (cy, listType) {
   cy.elements().addClass('faded')
 
   // parses the graph to compare nodes with the insight/threat list
-  cy.nodes().map(node => {
-    Object.keys(list).map(key => {
+  cy.nodes().map((node) => {
+    Object.keys(list).map((key) => {
       findNodes(
         node,
         list[key].concept,
@@ -73,7 +73,7 @@ module.exports = function insights (cy, listType) {
   })
 
   // display the constraints/threats on the message area
-  Object.keys(list).map(key => {
+  Object.keys(list).map((key) => {
     showResults(list[key].nodes, list[key].suggestion)
   })
 
@@ -97,7 +97,7 @@ module.exports = function insights (cy, listType) {
   }
 
   // empty stored values to prevent repeating entries on other function calls
-  Object.keys(list).map(key => {
+  Object.keys(list).map((key) => {
     list[key].nodes = []
   })
   emptyInsightCounter = 0

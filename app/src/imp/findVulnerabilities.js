@@ -21,14 +21,14 @@ let keywordsToShow = '' // keywords that are displayed in the bubble
  *
  * @param {Array} keywords keywords to be send to the database
  */
-const requestVulnerableData = keywords => {
+const requestVulnerableData = (keywords) => {
   // stores the CVE list
   let keywordCounter = 0
-  keywords.map(vulnerability => {
-    get(`${settings.cveSearchURL}${vulnerability}`, resp => {
+  keywords.map((vulnerability) => {
+    get(`${settings.cveSearchURL}${vulnerability}`, (resp) => {
       let data = ''
       // add each received chunk of data
-      resp.on('data', chunk => {
+      resp.on('data', (chunk) => {
         data += chunk
       })
       // once the whole response has been received
@@ -37,9 +37,9 @@ const requestVulnerableData = keywords => {
         vulnerableJSONData += data
 
         // this works for single keywords
-        Object.values(JSON.parse(data)).map(key => {
+        Object.values(JSON.parse(data)).map((key) => {
           // array with the CVE ids
-          key.map(info => vulnerabilities.push(info.id))
+          key.map((info) => vulnerabilities.push(info.id))
         })
         // this works for double keywords -> vendor/product
         // JSON.parse(data).map((key) => {
@@ -64,7 +64,7 @@ const requestVulnerableData = keywords => {
             })
         }
       })
-    }).on('error', err => {
+    }).on('error', (err) => {
       bubbleTxt(err.message)
     })
   })
@@ -74,9 +74,9 @@ const requestVulnerableData = keywords => {
 const saveFile = () => {
   dialog.showSaveDialog(
     { filters: [{ name: 'javascript', extensions: ['json'] }] },
-    filename => {
+    (filename) => {
       // requestVulnerableData(filename, keywords)
-      writeFile(filename, vulnerableJSONData, err => {
+      writeFile(filename, vulnerableJSONData, (err) => {
         if (err) console.error(`Error: ${err.message}`)
       })
     }
@@ -88,13 +88,13 @@ const saveFile = () => {
  *
  * @param {object} cy cytoscape instance
  */
-const findVulnerableNodes = cy => {
+const findVulnerableNodes = (cy) => {
   // fades out the graph elements
   cy.elements().addClass('faded')
 
   // stores the values of the nodes that will be used as keywords
   // fills the keywords with the values
-  cy.nodes().map(node => {
+  cy.nodes().map((node) => {
     if (node.data().asto.concept === 'device') {
       // check the 'type' attribute for vulnerabilities
       if (node.data().asto.type !== '') {
@@ -118,11 +118,11 @@ const findVulnerableNodes = cy => {
  *
  * @param {array} keywords keywords to be send to the database
  */
-const getUniqueKeywords = keywords => {
+const getUniqueKeywords = (keywords) => {
   const uniqueKeywords = [...new Set(keywords)]
 
   // stores the unique keywords for display
-  uniqueKeywords.map(keyword => {
+  uniqueKeywords.map((keyword) => {
     keywordsToShow += `• ${keyword}\n`
   })
 }
@@ -132,7 +132,7 @@ const getUniqueKeywords = keywords => {
  *
  * @param {object} cy cytoscape instance
  */
-const findVulnerabilities = cy => {
+const findVulnerabilities = (cy) => {
   findVulnerableNodes(cy)
 
   const permission = `Do you want to send a request to <strong>${settings.cveSearchUrl}</strong> <button id='yes-${buttonIdCounter}' class='menu-button' style='color: var(--main-tx-color); background-color: var(--main-bg-color); width: 45px; height: 25px;'>yes?</button>`

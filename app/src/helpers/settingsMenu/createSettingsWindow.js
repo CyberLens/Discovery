@@ -9,7 +9,7 @@ module.exports = function settingsWindow () {
    *
    * @param {string} URL
    */
-  const createWindow = URL => {
+  const createWindow = (URL) => {
     let win = new BrowserWindow({
       backgroundColor: '#282c34',
       width: 570,
@@ -36,10 +36,10 @@ module.exports = function settingsWindow () {
    *
    * @param {string} URL
    */
-  const windowIsOpen = URL => {
+  const windowIsOpen = (URL) => {
     let isWindowActive = false
     const activeWins = BrowserWindow.getAllWindows()
-    Object.values(activeWins).map(activeWin => {
+    Object.values(activeWins).map((activeWin) => {
       if (activeWin.getURL() === URL) {
         isWindowActive = true
       }

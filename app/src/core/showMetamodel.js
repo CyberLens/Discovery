@@ -11,7 +11,7 @@ metamodelPath.pop() // removes the src directory
 const finalPath = `file://${metamodelPath.join('/')}`
 
 // creates the window for the metamodel
-const createWindow = URL => {
+const createWindow = (URL) => {
   let win = new BrowserWindow({
     backgroundColor: '#282c34',
     width: 900,
@@ -34,10 +34,10 @@ const createWindow = URL => {
 }
 
 // check if an active metamodel exists
-const metamodelIsActive = URL => {
+const metamodelIsActive = (URL) => {
   let isWindowActive = false
   const activeWins = BrowserWindow.getAllWindows()
-  Object.values(activeWins).map(activeWin => {
+  Object.values(activeWins).map((activeWin) => {
     if (activeWin.getURL() === `${finalPath}/${URL}`) {
       isWindowActive = true
       if (activeWin.isMinimized() === true) {
