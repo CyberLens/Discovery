@@ -13,9 +13,7 @@ Dicsovery is an application to support security analysis using the Apparatus sec
 
 Dicsovery was developed to support the Apparatus framework and I would prefer to keep it like that. Having said that Dicsovery was designed with modularity in mind. It is quite easy to replace the Apparatus specific concepts with concepts from another modeling language.
 
-I would be more than happy to help anyone with the necessary changes.
-
-If Dicsovery generates enough interest from the community, I will consider moving it to plugin based application. The core application will provide the underlying logic of the app while different modeling languages and frameworks will function as plugins. The plugins would be responsible for imposing the languages rules and analysis functions.
+We would be more than happy to help anyone with the necessary changes.
 
 1. Make a fork. Play around with code.
 2. Experiment.
