@@ -40,7 +40,7 @@ const template = [
     role: 'help',
     submenu: [
       {
-        label: 'Apparatus documentation',
+        label: 'Disc0very documentation',
         click () {
           electron.shell.openExternal(URLs.docsURL)
         }

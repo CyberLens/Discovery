@@ -4,9 +4,6 @@
 
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
-<!-- ![travis build](https://travis-ci.org/Or3stis/apparatus.svg?branch=master) -->
-<!-- [![dependencies Status](https://david-dm.org/or3stis/apparatus.svg)](https://david-dm.org/or3stis/apparatus) -->
-<!-- [![devDependencies Status](https://david-dm.org/or3stis/apparatus/dev-status.svg)](https://david-dm.org/or3stis/apparatus?type=dev) -->
 
 DiscØvery is security analysis tool for IoT and 5G systems. It is the active fork of [ASTo](https://github.com/Or3stis/apparatus). DiscØvery is build with
 [electron](http://electron.atom.io/) and
@@ -57,7 +54,7 @@ To clone and run this repository you'll need [Git](https://git-scm.com) and [Nod
 # Clone this repository
 git clone https://github.com/CyberLens/Disc0very.git
 # Navigate into the repository
-cd apparatus
+cd Disc0very
 # Install dependencies
 npm install
 ```
@@ -76,7 +73,7 @@ npm run dist
 Because the app is still in prototype stage, it is best to keep up to date with the most recent commits. To do so, before starting the app, type:
 
 ```bash
-# inside the apparatus directory
+# inside the Disc0very directory
 
 # update to the latest
 git pull
@@ -100,9 +97,6 @@ The only network operation the application performs is when the vulnerability id
 
 If you want to contribute to the project,  that's great 😃. Check the [contributing](https://github.com/CyberLens/Disc0very/blob/master/CONTRIBUTING.md) guide. The application is being developed on macOs. That means that new commits might introduce breaking changes in other platforms. Especially commits that involve access to the file system. If something is not working, don't hesitate to create an [issue](https://github.com/CyberLens/Disc0very/issues).
 
-If you want to find out how the app works check the [wiki](https://or3stis.github.io/apparatus/wiki).
-
-You can check the project's planned features in the [roadmap](https://or3stis.github.io/apparatus/roadmap).
 
 ## Thanks
 

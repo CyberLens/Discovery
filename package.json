@@ -1,6 +1,6 @@
 {
   "name": "discovery",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "a network security analysis and visualization tool",
   "main": "./app/main.js",
   "scripts": {
@@ -61,12 +61,12 @@
     }
   },
   "dependencies": {
-    "cytoscape": "^3.15.0",
+    "cytoscape": "^3.15.1",
     "jsonfile": "^6.0.1"
   },
   "devDependencies": {
     "cross-env": "^7.0.2",
-    "electron": "^9.0.0",
+    "electron": "^9.0.4",
     "electron-builder": "^22.7.0",
     "prettier": "^2.0.5",
     "standard": "^14.3.4"
