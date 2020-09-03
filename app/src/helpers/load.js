@@ -18,17 +18,16 @@ module.exports = function load (cy, phase) {
     ? (dialogOptions = ['openFile', 'openDirectory'])
     : (dialogOptions = ['openFile'])
 
-  dialog.showOpenDialog(
-    {
+  dialog
+    .showOpenDialog({
       properties: [...dialogOptions],
       filters: [{ name: 'javascript', extensions: ['json', 'js'] }]
-    },
-    (fileNames) => {
-      if (fileNames === undefined) return
+    })
+    .then((result) => {
+      if (result.filePaths === undefined) return
 
-      const fileName = fileNames[0]
+      const fileName = result.filePaths[0]
       cyOptions(cy, fileName) // defines the cy instance
       initialize(cy.out, phase) // links the cy instance with the app
-    }
-  )
+    })
 }
