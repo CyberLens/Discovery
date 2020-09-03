@@ -332,23 +332,29 @@ module.exports = function pcapImport (cy, phase) {
       {
         properties: [...dialogOptions],
         filters: [{ name: 'pcap', extensions: ['pcapng', 'pcap'] }]
-      },
-      (pcapngFiles) => {
-        if (pcapngFiles === undefined) return
+      }).then(result => {
+      if (result.filePaths === undefined) return
 
-        const pcapngFile = pcapngFiles[0]
+      const pcapngFile = result.filePaths[0]
 
-        // ask for save location for the new file
-        dialog.showSaveDialog((filename) => {
-          // tcpdump command to be executed
-          const tcpDumpCommand = `tcpdump -qtn -r ${pcapngFile} > ${filename}`
+      // ask for save location for the new file
+      dialog.showSaveDialog({
+        filters: [
+          {
+            name: 'javascript',
+            extensions: ['json']
+          }
+        ]
+      }).then(result => {
+        // tcpdump command to be executed
+        const tcpDumpCommand = `tcpdump -qtn -r ${pcapngFile} > ${result.filePath}`
 
-          child.execSync(tcpDumpCommand)
+        child.execSync(tcpDumpCommand)
 
-          // reads data from the txt file, creates a js file and deletes the txt
-          readTxtFile(cy, filename)
-        })
-      }
+        // reads data from the txt file, creates a js file and deletes the txt
+        readTxtFile(cy, result.filePath)
+      })
+    }
     )
   } else {
     dialog.showErrorBox('Error', 'tcpdump not found in your path')
