@@ -55,7 +55,8 @@ const createWindow = () => {
     titleBarStyle: 'hidden',
     show: false,
     webPreferences: {
-      nodeIntegration: true
+      nodeIntegration: true,
+      enableRemoteModule: true
     }
   })
 
