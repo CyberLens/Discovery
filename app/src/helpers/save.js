@@ -18,25 +18,26 @@ module.exports = function save (cy) {
   // parses graph and stores it as an object
   const fullGraph = cy.json()
 
-  dialog.showSaveDialog(
-    {
+  dialog
+    .showSaveDialog({
       filters: [
         {
           name: 'javascript',
           extensions: ['json']
         }
       ]
-    }
-  ).then(result => {
-    jsonfileWrite(result.filePath, fullGraph, (err) => {
-      if (err) {
-        dialog.showErrorBox('Error while saving the file', err.message)
-      } else {
-        updateTittle(result.filePath)
-      }
-      bubbleTxt('graph saved\n👍')
     })
-  }).catch(err => {
-    console.log(err)
-  })
+    .then((result) => {
+      jsonfileWrite(result.filePath, fullGraph, (err) => {
+        if (err) {
+          dialog.showErrorBox('Error while saving the file', err.message)
+        } else {
+          updateTittle(result.filePath)
+        }
+        bubbleTxt('graph saved\n👍')
+      })
+    })
+    .catch((err) => {
+      console.log(err)
+    })
 }
