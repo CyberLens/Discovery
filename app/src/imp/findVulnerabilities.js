@@ -72,15 +72,14 @@ const requestVulnerableData = (keywords) => {
 
 /** saves the vulnerabilities in a json file */
 const saveFile = () => {
-  dialog.showSaveDialog(
-    { filters: [{ name: 'javascript', extensions: ['json'] }] },
-    (filename) => {
+  dialog
+    .showSaveDialog({ filters: [{ name: 'javascript', extensions: ['json'] }] })
+    .then((result) => {
       // requestVulnerableData(filename, keywords)
-      writeFile(filename, vulnerableJSONData, (err) => {
+      writeFile(result.filePath, vulnerableJSONData, (err) => {
         if (err) console.error(`Error: ${err.message}`)
       })
-    }
-  )
+    })
 }
 
 /**
