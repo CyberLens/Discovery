@@ -26,16 +26,17 @@ module.exports = function save (cy) {
           extensions: ['json']
         }
       ]
-    },
-    (fileToSave) => {
-      jsonfileWrite(fileToSave, fullGraph, (err) => {
-        if (err) {
-          dialog.showErrorBox('Error while saving the file', err.message)
-        } else {
-          updateTittle(fileToSave)
-        }
-        bubbleTxt('graph saved\n👍')
-      })
     }
-  )
+  ).then(result => {
+    jsonfileWrite(result.filePath, fullGraph, (err) => {
+      if (err) {
+        dialog.showErrorBox('Error while saving the file', err.message)
+      } else {
+        updateTittle(result.filePath)
+      }
+      bubbleTxt('graph saved\n👍')
+    })
+  }).catch(err => {
+    console.log(err)
+  })
 }
