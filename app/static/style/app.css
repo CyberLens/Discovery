@@ -18,7 +18,7 @@
 
 body {
   background-color: var(--main-bg-color);
-  font-family: system-ui, "Helvetica Neue", sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   color: var(--main-tx-color);
   height: 100%;
   width: 100%;
