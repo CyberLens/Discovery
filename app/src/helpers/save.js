@@ -41,3 +41,27 @@ module.exports = function save (cy) {
       console.log(err)
     })
 }
+
+/** saves the vulnerabilities in a json file */
+const saveFile = () => {
+  dialog
+    .showSaveDialog({ filters: [{ name: 'javascript', extensions: ['json'] }] })
+    .then((result) => {
+      // requestVulnerableData(filename, keywords)
+      writeFile(result.filePath, vulnerableJSONData, (err) => {
+        if (err) console.error(`Error: ${err.message}`)
+      })
+    })
+}
+
+const saveFileReport = () => {
+  dialog.showSaveDialog(
+    { filters: [{ name: 'markdown', extensions: ['md'] }] },
+    (filename) => {
+      writeFile(filename, dataToWrite, (err) => {
+        if (err) console.error(`Error: ${err.message}`)
+      })
+      bubbleTxt('security report generated\n👍')
+    }
+  )
+}
