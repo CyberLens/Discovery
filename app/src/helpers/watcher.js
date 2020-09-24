@@ -42,19 +42,20 @@ const nodes = (graphNodes, cy) => {
 /** checks for changes in the model before navigating to the index.html */
 const closeNotification = () => {
   if (changeToken === true) {
-    dialog.showMessageBox(
-      {
+    dialog
+      .showMessageBox({
         message: 'Do you want to navigate to the Home menu?',
         buttons: ['No', 'Yes']
-      }
-    ).then((response) => {
-      // if the response is 'Yes' navigate to the index.html
-      if (response.response === 1) {
-        window.location.href = `file://${__dirname}/../../static/index.html`
-      }
-    }).catch((err) => {
-      console.log(err)
-    })
+      })
+      .then((response) => {
+        // if the response is 'Yes' navigate to the index.html
+        if (response.response === 1) {
+          window.location.href = `file://${__dirname}/../../static/index.html`
+        }
+      })
+      .catch((err) => {
+        console.log(err)
+      })
     // when there no changes in the model navigate to index.html without prompting
   } else {
     window.location.href = `file://${__dirname}/../../static/index.html`
