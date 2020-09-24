@@ -46,15 +46,24 @@ module.exports = function generateReport (cy) {
     .concat(numberOfVulnerabilities)
 
   const saveFile = () => {
-    dialog.showSaveDialog(
-      { filters: [{ name: 'markdown', extensions: ['md'] }] },
-      (filename) => {
-        writeFile(filename, dataToWrite, (err) => {
+    dialog
+      .showSaveDialog({
+        filters: [
+          {
+            name: 'markdown',
+            extensions: ['md']
+          }
+        ]
+      })
+      .then((result) => {
+        writeFile(result.filePath, dataToWrite, (err) => {
           if (err) console.error(`Error: ${err.message}`)
         })
         bubbleTxt('security report generated\n👍')
-      }
-    )
+      })
+      .catch((err) => {
+        console.log(err)
+      })
   }
 
   const reportButton = `Do you want to save the security report?<button id='reportButton-${buttonCounter}' class='menu-button' style='color: var(--main-tx-color); background-color: var(--main-bg-color); width: 45px; height: 25px;'>yes</button>`
