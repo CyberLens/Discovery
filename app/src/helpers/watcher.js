@@ -44,16 +44,17 @@ const closeNotification = () => {
   if (changeToken === true) {
     dialog.showMessageBox(
       {
-        message: 'Do you want to navigate to the home  menu?',
+        message: 'Do you want to navigate to the Home menu?',
         buttons: ['No', 'Yes']
-      },
-      (response) => {
-        // is the response is Yes navigate to the index.html
-        if (response === 1) {
-          window.location.href = `file://${__dirname}/../../static/index.html`
-        }
       }
-    )
+    ).then((response) => {
+      // if the response is 'Yes' navigate to the index.html
+      if (response.response === 1) {
+        window.location.href = `file://${__dirname}/../../static/index.html`
+      }
+    }).catch((err) => {
+      console.log(err)
+    })
     // when there no changes in the model navigate to index.html without prompting
   } else {
     window.location.href = `file://${__dirname}/../../static/index.html`
