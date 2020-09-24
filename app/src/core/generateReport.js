@@ -1,5 +1,6 @@
 const { dialog } = require('electron').remote
 const { writeFile } = require('fs')
+const save = require('../helpers/save.js')
 const bubbleTxt = require('../helpers/bubbleTxt.js')
 const bubbleHTML = require('../helpers/bubbleHTML.js')
 
@@ -45,25 +46,14 @@ module.exports = function generateReport (cy) {
     .concat(numberOfMechanisms)
     .concat(numberOfVulnerabilities)
 
-  const saveFile = () => {
-    dialog.showSaveDialog(
-      { filters: [{ name: 'markdown', extensions: ['md'] }] },
-      (filename) => {
-        writeFile(filename, dataToWrite, (err) => {
-          if (err) console.error(`Error: ${err.message}`)
-        })
-        bubbleTxt('security report generated\n👍')
-      }
-    )
-  }
-
+ 
   const reportButton = `Do you want to save the security report?<button id='reportButton-${buttonCounter}' class='menu-button' style='color: var(--main-tx-color); background-color: var(--main-bg-color); width: 45px; height: 25px;'>yes</button>`
 
   bubbleHTML(reportButton)
   document
     .getElementById(`reportButton-${buttonCounter}`)
     .addEventListener('click', () => {
-      saveFile()
+      save.saveFileReport()
     })
 
   buttonCounter += 1

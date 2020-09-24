@@ -39,25 +39,27 @@ const nodes = (graphNodes, cy) => {
 //   }
 // }
 
-/** checks for changes in the model before navigating to the index.html */
+/** checks for changes in the model before navigating to the isndex.html */
 const closeNotification = () => {
   if (changeToken === true) {
     dialog.showMessageBox(
       {
         message: 'Do you want to navigate to the home  menu?',
         buttons: ['No', 'Yes']
-      },
-      (response) => {
+      })
+      .then((change) => {
         // is the response is Yes navigate to the index.html
-        if (response === 1) {
+        if (change.response === 1) {
           window.location.href = `file://${__dirname}/../../static/index.html`
         }
       }
     )
     // when there no changes in the model navigate to index.html without prompting
-  } else {
-    window.location.href = `file://${__dirname}/../../static/index.html`
   }
+  else
+  {
+    window.location.href = `file://${__dirname}/../../static/index.html`
+  } 
 }
 
 module.exports = {
