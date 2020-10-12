@@ -61,7 +61,7 @@ module.exports = function homeMenu () {
   })
 
   const acknowledgmentMessage =
-    '<span style="position: absolute; bottom: 10px; right: 50%;">❮❯ with ♥︎ by <strong>or3stis</strong></span>'
+    '<span style="position: absolute; bottom: 10px; right: 50%;">❮❯ with ♥︎ by <strong>CyberLens</strong></span>'
 
   const acknowledgment = document.createElement('acknowledgment')
   acknowledgment.id = 'acknowledgment-id'
