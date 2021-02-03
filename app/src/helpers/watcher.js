@@ -1,5 +1,6 @@
 // watch the graph for changes
 const { dialog } = require('electron').remote
+const path = require('path')
 
 let changeToken = false
 
@@ -41,6 +42,11 @@ const nodes = (graphNodes, cy) => {
 
 /** checks for changes in the model before navigating to the index.html */
 const closeNotification = () => {
+  const homeWindowURL = path.join(
+    'file://',
+    __dirname,
+    '/../../static/index.html'
+  )
   if (changeToken === true) {
     dialog
       .showMessageBox({
@@ -50,7 +56,7 @@ const closeNotification = () => {
       .then((response) => {
         // if the response is 'Yes' navigate to the index.html
         if (response.response === 1) {
-          window.location.href = `file://${__dirname}/../../static/index.html`
+          window.location.href = homeWindowURL
         }
       })
       .catch((err) => {
@@ -58,7 +64,7 @@ const closeNotification = () => {
       })
     // when there no changes in the model navigate to index.html without prompting
   } else {
-    window.location.href = `file://${__dirname}/../../static/index.html`
+    window.location.href = homeWindowURL
   }
 }
 

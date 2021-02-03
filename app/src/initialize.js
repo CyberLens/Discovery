@@ -48,9 +48,8 @@ module.exports = function initialize (cy, phase) {
   const graphNodes = cy.nodes()
   // counter variable to create unique sequential node ids in addComponents.js
   let nodeCounterID = ''
-  cy.nodes().map((node) => {
-    nodeCounterID = node.data().id
-  })
+  cy.nodes().map((node) => (nodeCounterID = node.data().id))
+
   // turn the counter into an number and remove the 'n'
   const nodeCounter = Number(nodeCounterID.replace('n', ''))
 

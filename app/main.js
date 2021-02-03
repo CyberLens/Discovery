@@ -5,6 +5,7 @@ const app = electron.app
 // Module to create native browser window.
 const BrowserWindow = electron.BrowserWindow
 const { writeFile, existsSync, statSync } = require('fs')
+const path = require('path')
 
 const appMenu = require('./src/appMenu.js')
 
@@ -61,7 +62,8 @@ const createWindow = () => {
   })
 
   // and load the index.html of the app.
-  mainWindow.loadURL(`file://${__dirname}/static/index.html`)
+  const windowURL = path.join('file://', __dirname, '/static/index.html')
+  mainWindow.loadURL(windowURL)
 
   // Emitted when the window is closed.
   mainWindow.on('closed', () => {

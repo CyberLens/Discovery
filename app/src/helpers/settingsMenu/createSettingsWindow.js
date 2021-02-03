@@ -1,8 +1,9 @@
 const { BrowserWindow } = require('electron').remote
+const path = require('path')
 
 /** creates the settings window */
 module.exports = function settingsWindow () {
-  const settingsURL = `file://${__dirname}/../../../static/settings.html`
+  const settingsURL = path.join('file://', __dirname, '/../../../static/settings.html')
 
   /**
    * creates a new window for the settings
@@ -39,7 +40,7 @@ module.exports = function settingsWindow () {
   const windowIsOpen = (URL) => {
     let isWindowActive = false
     const activeWins = BrowserWindow.getAllWindows()
-    Object.values(activeWins).map((activeWin) => {
+    Object.values(activeWins).forEach((activeWin) => {
       if (activeWin.getURL() === URL) {
         isWindowActive = true
       }
