@@ -24,7 +24,7 @@ let keywordsToShow = '' // keywords that are displayed in the bubble
 const requestVulnerableData = (keywords) => {
   // stores the CVE list
   let keywordCounter = 0
-  keywords.map((vulnerability) => {
+  keywords.forEach((vulnerability) => {
     get(`${settings.cveSearchURL}${vulnerability}`, (resp) => {
       let data = ''
       // add each received chunk of data
@@ -37,12 +37,12 @@ const requestVulnerableData = (keywords) => {
         vulnerableJSONData += data
 
         // this works for single keywords
-        Object.values(JSON.parse(data)).map((key) => {
+        Object.values(JSON.parse(data)).forEach((key) => {
           // array with the CVE ids
-          key.map((info) => vulnerabilities.push(info.id))
+          key.forEach((info) => vulnerabilities.push(info.id))
         })
         // this works for double keywords -> vendor/product
-        // JSON.parse(data).map((key) => {
+        // JSON.parse(data).forEach((key) => {
         // console.log(key)
         // })
 
@@ -93,7 +93,7 @@ const findVulnerableNodes = (cy) => {
 
   // stores the values of the nodes that will be used as keywords
   // fills the keywords with the values
-  cy.nodes().map((node) => {
+  cy.nodes().forEach((node) => {
     if (node.data().asto.concept === 'device') {
       // check the 'type' attribute for vulnerabilities
       if (node.data().asto.type !== '') {
@@ -121,7 +121,7 @@ const getUniqueKeywords = (keywords) => {
   const uniqueKeywords = [...new Set(keywords)]
 
   // stores the unique keywords for display
-  uniqueKeywords.map((keyword) => {
+  uniqueKeywords.forEach((keyword) => {
     keywordsToShow += `• ${keyword}\n`
   })
 }

@@ -12,14 +12,14 @@ let arrWrong = [] // stores wrong connection of nodes
  * @param {array} componentArray allowed connected components
  */
 const componentValidation = (cy, component, componentArray) => {
-  cy.nodes().map((node) => {
+  cy.nodes().forEach((node) => {
     // checks if node is the desired component
     if (node.data().asto.concept === component) {
       // stores the neighboring nodes of the component
       const neighborNodes = node.neighborhood().add(node)
       const neighborObject = neighborNodes.data().asto.concept
 
-      Object.keys(neighborObject).map(() => {
+      Object.keys(neighborObject).forEach(() => {
         // every neighbor node is added to the array arrWrong
         arrWrong.push(neighborObject)
 
@@ -47,7 +47,7 @@ const componentValidation = (cy, component, componentArray) => {
  */
 module.exports = function moduleValidation (cy) {
   // checks the validity of the model using the rules of the schema
-  Object.keys(impSchema.pairs).map((concept) => {
+  Object.keys(impSchema.pairs).forEach((concept) => {
     componentValidation(cy, concept, impSchema.pairs[concept])
   })
 

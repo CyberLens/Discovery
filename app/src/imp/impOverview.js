@@ -72,16 +72,16 @@ module.exports = function overview (cy) {
   output = `• nodes: ${totalNodes}\n\n`
 
   // count the number of nodes
-  cy.nodes().map((node) => {
+  cy.nodes().forEach((node) => {
     const nodeConcept = node.data().asto.concept
     // count the module nodes
-    Object.keys(moduleNodes).map((module) => {
+    Object.keys(moduleNodes).forEach((module) => {
       if (moduleNodes[module].schema.includes(nodeConcept) === true) {
         moduleNodes[module].numberOfNodes += 1
       }
     })
     // count the concept nodes
-    Object.keys(graphNodes).map((concept) => {
+    Object.keys(graphNodes).forEach((concept) => {
       if (nodeConcept === concept) {
         graphNodes[concept].numberOfNodes += 1
       }
@@ -94,12 +94,12 @@ module.exports = function overview (cy) {
   }
 
   // loop the objects to compose the output
-  Object.keys(moduleNodes).map((module) => {
+  Object.keys(moduleNodes).forEach((module) => {
     composeOutput(module, moduleNodes[module].numberOfNodes)
   })
   // new line between modules and concepts
   output += '\n'
-  Object.keys(graphNodes).map((node) => {
+  Object.keys(graphNodes).forEach((node) => {
     composeOutput(node, graphNodes[node].numberOfNodes)
   })
 
