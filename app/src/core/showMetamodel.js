@@ -37,7 +37,7 @@ const createWindow = (URL) => {
 const metamodelIsActive = (URL) => {
   let isWindowActive = false
   const activeWins = BrowserWindow.getAllWindows()
-  Object.values(activeWins).map((activeWin) => {
+  Object.values(activeWins).forEach((activeWin) => {
     if (activeWin.getURL() === `${finalPath}/${URL}`) {
       isWindowActive = true
       if (activeWin.isMinimized() === true) {

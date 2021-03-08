@@ -15,10 +15,10 @@ module.exports = function patterns (cy) {
     cy.elements().addClass('faded')
 
     // check all the nodes in graph for the search terms
-    cy.nodes().map((node) => {
+    cy.nodes().forEach((node) => {
       const nodeData = node.data().asto
-      Object.keys(nodeData).map((value) => {
-        pattern.map((i) => {
+      Object.keys(nodeData).forEach((value) => {
+        pattern.forEach((i) => {
           if (nodeData[value] === i) {
             flaggedNodes += `• ${node.data().label} -> ${i}\n`
             // remove faded class from the search nodes

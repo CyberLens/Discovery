@@ -3,7 +3,11 @@ const path = require('path')
 
 /** creates the settings window */
 module.exports = function settingsWindow () {
-  const settingsURL = path.join('file://', __dirname, '/../../../static/settings.html')
+  const settingsURL = path.join(
+    'file://',
+    __dirname,
+    '/../../../static/settings.html'
+  )
 
   /**
    * creates a new window for the settings

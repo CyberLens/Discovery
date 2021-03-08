@@ -15,7 +15,7 @@ let buttonCounter = 0
  * @param {object} cy cytoscape instance
  */
 module.exports = function generateReport (cy) {
-  cy.nodes().map((node) => {
+  cy.nodes().forEach((node) => {
     if (node.data().asto.concept === 'threat') {
       threatsArray.push(node)
     }

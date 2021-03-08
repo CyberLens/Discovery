@@ -61,7 +61,7 @@ const selectionLayout = (
 
   selectionForm.appendChild(selectionLabel)
   selectionForm.appendChild(selectionList)
-  selectionOptions.map((value) => {
+  selectionOptions.forEach((value) => {
     const option = document.createElement('option')
     option.value = value
     option.text = value
@@ -87,7 +87,7 @@ const createForm = (selectedNode) => {
   const inputIds = []
 
   const nodeData = selectedNode.data().asto
-  Object.keys(nodeData).map((key) => {
+  Object.keys(nodeData).forEach((key) => {
     if (key === 'layer') {
       // device layer attribute
       selectionLayout(form, key, layerOptions, nodeData, inputIds)
@@ -141,7 +141,7 @@ const createForm = (selectedNode) => {
   // capture the changed values of the node
   const formId = document.getElementById('form-id')
   formId.onsubmit = () => {
-    inputIds.map((keyValue) => {
+    inputIds.forEach((keyValue) => {
       const id = document.getElementById(keyValue)
       selectedNode.data().asto[keyValue] = id.value
     })
