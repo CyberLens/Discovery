@@ -12,7 +12,7 @@ const bubbleHTML = require('../helpers/bubbleHTML.js')
  */
 const transition = (cy, nodeCounter) => {
   // make the changes in the node components
-  cy.nodes().map((node) => {
+  cy.nodes().forEach((node) => {
     if (node.data().asto.concept === 'micronet') {
       node.data().asto.state = ''
     } else if (node.data().asto.concept === 'device') {
@@ -33,7 +33,7 @@ const transition = (cy, nodeCounter) => {
   })
 
   /** add connections between devices */
-  cy.edges().map((edge) => {
+  cy.edges().forEach((edge) => {
     if (edge.data().label === 'connects') {
       const source = edge.data().source
       const target = edge.data().target

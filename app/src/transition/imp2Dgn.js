@@ -11,7 +11,7 @@ const bubbleHTML = require('../helpers/bubbleHTML.js')
  */
 const transition = (cy) => {
   const neighbors = []
-  cy.nodes().map((node) => {
+  cy.nodes().forEach((node) => {
     if (node.data().asto.concept === 'device') {
       delete node.data().asto.layer
       delete node.data().asto.type
@@ -39,7 +39,7 @@ const transition = (cy) => {
    * removes the edges of the connections
    * adds news edges between the devices
    */
-  neighbors.map((node) => {
+  neighbors.forEach((node) => {
     // remove the edges
     node[1].remove()
     node[3].remove()

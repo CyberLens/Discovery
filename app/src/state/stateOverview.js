@@ -12,7 +12,7 @@ module.exports = function stateOverview (cy) {
   let modelNode = 0
 
   /** counts the model nodes */
-  cy.nodes().map((node) => {
+  cy.nodes().forEach((node) => {
     const nodeConcept = node.data().asto.concept
     if (nodeConcept === 'model') {
       modelNode += 1
