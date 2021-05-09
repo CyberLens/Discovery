@@ -1,7 +1,7 @@
 // creates models from pcap-ng files
 
 // TODO code is difficult to read, refactor it
-const { dialog } = require('electron').remote
+const { dialog } = require('@electron/remote')
 const { writeFile, readFile, unlink } = require('fs')
 const child = require('child_process')
 

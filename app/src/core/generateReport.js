@@ -1,4 +1,4 @@
-const { dialog } = require('electron').remote
+const { dialog } = require('@electron/remote')
 const { writeFile } = require('fs')
 const bubbleTxt = require('../helpers/bubbleTxt.js')
 const bubbleHTML = require('../helpers/bubbleHTML.js')

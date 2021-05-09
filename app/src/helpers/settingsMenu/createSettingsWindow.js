@@ -1,4 +1,4 @@
-const { BrowserWindow } = require('electron').remote
+const { BrowserWindow } = require('@electron/remote')
 const path = require('path')
 
 /** creates the settings window */

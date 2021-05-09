@@ -1,4 +1,4 @@
-const { app } = require('electron').remote
+const { app } = require('@electron/remote')
 
 const userDataPath = app.getPath('userData')
 const settings = require(`${userDataPath}/astoSettings.js`)

@@ -2,7 +2,7 @@
 
 const { get } = require('https')
 const { writeFile } = require('fs')
-const { dialog, app } = require('electron').remote
+const { dialog, app } = require('@electron/remote')
 
 const userDataPath = app.getPath('userData')
 const settings = require(`${userDataPath}/astoSettings.js`)

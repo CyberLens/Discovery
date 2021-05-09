@@ -61,12 +61,13 @@
     }
   },
   "dependencies": {
+    "@electron/remote": "^1.1.0",
     "cytoscape": "^3.16.2",
     "jsonfile": "^6.0.1"
   },
   "devDependencies": {
     "cross-env": "^7.0.2",
-    "electron": "^9.4.4",
+    "electron": "^12.0.7",
     "electron-builder": "^22.8.1",
     "prettier": "^2.1.2",
     "standard": "^16.0.3"

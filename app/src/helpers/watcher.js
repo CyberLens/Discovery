@@ -1,5 +1,5 @@
 // watch the graph for changes
-const { dialog } = require('electron').remote
+const { dialog } = require('@electron/remote')
 const path = require('path')
 
 let changeToken = false

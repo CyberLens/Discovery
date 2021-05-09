@@ -1,6 +1,6 @@
 // helper for loading saved graphs
 
-const { dialog } = require('electron').remote
+const { dialog } = require('@electron/remote')
 const initialize = require('../initialize.js')
 const cyOptions = require('./cyOptions.js')
 

@@ -1,4 +1,5 @@
 const electron = require('electron')
+require('@electron/remote/main').initialize()
 const ipc = require('electron').ipcMain
 // Module to control application life.
 const app = electron.app
@@ -58,7 +59,8 @@ const createWindow = () => {
     webPreferences: {
       nodeIntegration: true,
       enableRemoteModule: true,
-      worldSafeExecuteJavaScript: true
+      worldSafeExecuteJavaScript: true,
+      contextIsolation: false
     }
   })
 

@@ -2,7 +2,7 @@
 
 const bubbleTxt = require('./bubbleTxt.js')
 const jsonfileWrite = require('jsonfile').writeFile
-const { dialog } = require('electron').remote
+const { dialog } = require('@electron/remote')
 
 const updateTittle = (file) => {
   const titleFilePath = document.getElementById('title-file-path-id')
