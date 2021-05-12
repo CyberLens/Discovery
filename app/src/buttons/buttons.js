@@ -166,9 +166,8 @@ module.exports = function buttons (
     })
 
     // verify vulnerabilities
-    const buttonVulnerabilityVerification = document.getElementById(
-      'vuln-ver-btn'
-    )
+    const buttonVulnerabilityVerification =
+      document.getElementById('vuln-ver-btn')
     buttonVulnerabilityVerification.addEventListener('click', () => {
       verification(cy, 'vulnerability', 'mechanism')
     })
